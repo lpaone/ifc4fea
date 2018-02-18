@@ -1,3 +1,6 @@
 # File del wrapper compilato
 *.so
 *.pyc
+
+# File prodotti da MEDCoupling
+*.med

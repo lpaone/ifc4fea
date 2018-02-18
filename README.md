@@ -33,3 +33,11 @@ Per aggiungere un file o una directory nuova
 ```
 git add <file_name/dir_name>
 ```
+Per aggiungere tutte le nuove modifiche
+```
+git add .
+```
+Per consolidare lo stage in locale
+```
+git commit -m "<messaggio>"
+```
