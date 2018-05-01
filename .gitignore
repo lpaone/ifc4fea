@@ -4,3 +4,4 @@
 
 # File prodotti da MEDCoupling
 *.med
+*.vtu
