@@ -1,7 +1,6 @@
 # http://docs.salome-platform.org/latest/dev/MEDCoupling/medcouplingpyexamples.html#medcouplingpyexamplesUmeshStdBuild1
 # Standard build of an unstructured mesh from scratch
 
-import os
 import MEDCoupling as mc
 import MEDLoader as ml
 
@@ -41,10 +40,15 @@ mesh.allocateCells(5) #You can put more than 5 if you want but not less.
 # MEDCoupling::MEDCouplingUMesh::insertNextCell
 # UMesh method.
 
+print("Cella n.1 formata dai nodi --> ", nodalConnOfCell[:4])
 mesh.insertNextCell( mc.NORM_QUAD4 , nodalConnOfCell[:4])
+print("Cella n.2 formata dai nodi --> ", nodalConnOfCell[4:7])
 mesh.insertNextCell( mc.NORM_TRI3  , nodalConnOfCell[4:7])
+print("Cella n.3 formata dai nodi --> ", nodalConnOfCell[7:10])
 mesh.insertNextCell( mc.NORM_TRI3  , nodalConnOfCell[7:10])
+print("Cella n.4 formata dai nodi --> ", nodalConnOfCell[10:14])
 mesh.insertNextCell( mc.NORM_QUAD4 , nodalConnOfCell[10:14])
+print("Cella n.5 formata dai nodi --> ", nodalConnOfCell[14:])
 mesh.insertNextCell( mc.NORM_QUAD4 , nodalConnOfCell[14:])
 
 # When the nodal connectivity cell per cell has been finished, call
@@ -63,10 +67,8 @@ coordsArr = mc.DataArrayDouble(coords,9,3)
 #coordsArr contains 9 tuples, that is to say mesh contains 9 nodes.
 mesh.setCoords(coordsArr)
 
-mesh.writeVTK("uMesh2DT.vtu")
+mesh.writeVTK("uMesh2D.vtu")
 
-ml.WriteUMesh("uMesh2DT.med",mesh,True)
+ml.WriteUMesh("uMesh2D.med",mesh,True)
 
-# Python ui in paraview
-cmd = 'pvpython uMesh2Dpvcomm.py'
-os.system(cmd) # returns the exit status
+
