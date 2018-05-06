@@ -63,9 +63,9 @@ coordsArr = mc.DataArrayDouble(coords,9,3)
 #coordsArr contains 9 tuples, that is to say mesh contains 9 nodes.
 mesh.setCoords(coordsArr)
 
-mesh.writeVTK("uMesh2DT.vtu")
+mesh.writeVTK("uMesh2D.vtu")
 
-ml.WriteUMesh("uMesh2DT.med",mesh,True)
+ml.WriteUMesh("uMesh2D.med",mesh,True)
 
 # Python ui in paraview
 cmd = 'pvpython uMesh2Dpvcomm.py'
