@@ -1,3 +1,8 @@
+# This file is python script runnable with ParaView python
+# but in this context is coupled with uMesh2D.py
+#
+# Luigi Luis Paone 
+
 #### import the simple module from the paraview
 from paraview.simple import *
 #### disable automatic camera reset on 'Show'
